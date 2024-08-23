@@ -106,16 +106,16 @@ async def on_message(message):
             return message
 
         # Choose between the available Response Method
-        # message = oobaboogaTGW() 
-        message = LMS()
+        # message2 = oobaboogaTGW() 
+        message2 = LMS()
 
         #--------------------Text-To-Specch(TTS)----------------------------
         # Choose between the available TTS engines
         # silero_tts(message2, "en", "v3_en", "en_21", "output.mp3")  # Silero TTS can generate English, Russian, French, Hindi, Spanish, German, etc.
-        google_tts(message, language='en', output_file='output.mp3')
+        google_tts(message2, language='en', output_file='output.mp3')
 
         # Send Response to Discord
-        await message.channel.send(message)
+        await message.channel.send(message2)
         await message.channel.send(file=discord.File("output.mp3"))
         
         username = str(message.author)
